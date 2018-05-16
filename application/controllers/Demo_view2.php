@@ -4,7 +4,7 @@ class Demo_view2 extends CI_Controller{
 		parent:: __construct();
 		$this ->load->helper('url');
 	}
-	
+	//HALO SELAMAT PAGI
 	public function index(){
 		$this -> load->view('demoview');
 		
