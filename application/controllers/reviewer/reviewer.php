@@ -1,5 +1,5 @@
 <?php
-class dosen extends MY_Controller{
+class reviewer extends MY_Controller{
 
  public function __construct(){
   parent::__construct();
@@ -14,14 +14,14 @@ class dosen extends MY_Controller{
 	if ($this->session->userdata('level') == "kota") {
       redirect('KoordinatorTA/KoordinatorTA');
  }
-	if($this->session->userdata('level') == "reviewer"){
-		redirect('reviewer/reviewer');
+	if($this->session->userdata('level') == "dosen"){
+		redirect('dosen/dosen');
 	}
 }
 
   public function index()
   {
-    $this->load->view('dosen/Dashboard');
+    $this->load->view('reviewer/Dashboard');
   }
 }
 ?>

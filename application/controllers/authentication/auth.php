@@ -40,6 +40,7 @@ public function login(){
 	if ($this->session->userdata('level') == "mahasiswa"){redirect('mahasiswa/mahasiswa');}
     if ($this->session->userdata('level') == "dosen"){redirect('dosen/dosen');}
 	if ($this->session->userdata('level') == "kota"){redirect('KoordinatorTA/KoordinatorTA');}
+	if ($this->session->userdata('level') == "reviewer"){redirect('reviewer/reviewer');}
 	
 	//Proses login dan validasi
 	if($this->input->post('submit')){
@@ -59,6 +60,8 @@ public function login(){
           redirect('dosen/dosen');
         }else if($data->level == 'kota'){
 			redirect('KoordinatorTA/KoordinatorTA');
+		}else if($data->level == 'reviewer'){
+			redirect('reviewer/reviewer');
 		}
 		
 	}
