@@ -14,11 +14,21 @@ class KoordinatorTA extends MY_Controller{
  if ($this->session->userdata('level') == "dosen") {
       redirect('dosen/dosen');
  }
+  if ($this->session->userdata('level') == "reviewer") {
+      redirect('reviewer/reviewer');
+ }
 }
 
-  public function index()
-  {
+  public function index(){
     $this->load->view('KoordinatorTA/Dashboard');
   }
+  
+  public function ConfigDataUser (){
+    redirect('KoordinatorTA/UserData');
+  }
+  public function datauser (){
+   $this->load->view('koordinatorTA/UserConfig/Datauser');
+  }
+  
 }
 ?>

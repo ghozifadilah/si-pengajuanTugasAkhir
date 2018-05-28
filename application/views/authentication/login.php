@@ -17,7 +17,10 @@
         <h3>SILAHKAN LOGIN</h3>
         <input type="text" name="username" placeholder="Masukan Username" size="30" required/></br></br>
         <input type="password" name="password" placeholder="Masukan Password" size="30" required/></br></br>
-        <button type="submit" name="submit" value="login">Masuk</button>
+        
+		<button type="submit" name="submit" value="login">Masuk</button>
+		<a href="<?php echo site_url('authentication/Register/newuser'); ?>">Daftar</a>
+		
       </center>
     </form>
   </body>

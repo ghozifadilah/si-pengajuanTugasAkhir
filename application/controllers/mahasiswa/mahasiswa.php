@@ -24,10 +24,14 @@ class mahasiswa extends MY_Controller{
   public function pengajuan(){
 	  $this->load->view('mahasiswa/ajukanjudul');
   }
+  public function KirimJudul (){
+	  redirect('mahasiswa/usulanjudul/');
+  }
   
   public function senpro(){
 	  $this->load->view('mahasiswa/SeminarPorposal');
   }
+  
   
   
 }
