@@ -18,8 +18,17 @@ class mahasiswa extends MY_Controller{
 
   public function index()
   {
-	
     $this->load->view('mahasiswa/Dashboard');
   }
+  
+  public function pengajuan(){
+	  $this->load->view('mahasiswa/ajukanjudul');
+  }
+  
+  public function senpro(){
+	  $this->load->view('mahasiswa/SeminarPorposal');
+  }
+  
+  
 }
 ?>
