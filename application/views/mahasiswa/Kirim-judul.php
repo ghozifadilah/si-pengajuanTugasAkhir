@@ -24,7 +24,7 @@
 				<td><input type="text" name="judul"></td>
 			</tr>
 			<tr>
-				<td>ringkasan</td>
+				<td>Ringkasan</td>
 				<td><textarea  name="ringkasan"  required  ></textarea></td>
 				 
 			</tr>
@@ -34,7 +34,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Tambah"></td>
+				<td><input type="submit" value="Tambah" href="<?php echo site_url('views/reviewr/contenview.php'); ?> "></td>
 			</tr>
 		</table>
 	</form>	

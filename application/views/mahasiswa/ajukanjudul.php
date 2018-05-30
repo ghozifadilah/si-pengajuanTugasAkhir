@@ -8,8 +8,6 @@
 		<h3> Username Anda Adalah <?php echo $this->session->userdata('username'); ?></h3><br /><br />
 		<a href="<?php echo site_url('mahasiswa/mahasiswa'); ?>">Home</a>
         <br>
-		<a href="<?php echo site_url('mahasiswa/usulanjudul/LihatJudul'); ?>">Kirim Judul</a>
-        <br>
 		<a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
       </center>
 	  <br>
@@ -25,7 +23,6 @@
 			<th>Dosen Pembimbing</th>
 			<th>Komentar</th>
 			<th>Status</th>
-			
 		</tr>
 		<?php 
 		$no = 1;

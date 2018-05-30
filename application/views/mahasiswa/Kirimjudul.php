@@ -24,7 +24,7 @@
 				<td><input type="text" name="judul"></td>
 			</tr>
 			<tr>
-				<td>ringkasan</td>
+				<td>Ringkasan</td>
 				<td><textarea  name="ringkasan"  required  ></textarea></td>
 				 
 			</tr>
