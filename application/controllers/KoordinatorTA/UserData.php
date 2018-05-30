@@ -86,7 +86,7 @@ class UserData extends CI_Controller{
 		'id_user' => $id_user
 	);
 
-	$this->M_Userdata->update_data($where,$data,'table_ta');
+	$this->M_Userdata->update_data($where,$data,'user');
 	redirect('koordinatorTA/UserData/');
 }
 
