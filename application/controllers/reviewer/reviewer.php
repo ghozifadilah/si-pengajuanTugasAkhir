@@ -23,5 +23,11 @@ class reviewer extends MY_Controller{
   {
     $this->load->view('reviewer/Dashboard');
   }
+  
+  public function review(){
+	  redirect('reviewer/reviewjudul');
+  }
+
 }
+
 ?>
