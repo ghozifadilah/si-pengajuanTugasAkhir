@@ -29,7 +29,7 @@ class reviewjudul extends CI_Controller{
 		
 		
 		
-		
+		$this->load->view('header');
 		//pengaturan pagination tabel dan view nya
 		$this->load->database();
 		$jumlah_data = $this->M_Config->Pagejumlah_KirimJudul('table_ta');
@@ -41,7 +41,7 @@ class reviewjudul extends CI_Controller{
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_Config->PageReview_judul('table_ta',$config['per_page'],$from);
 		$this->load->view('reviewer/Review-Judul',$data);
-		
+		$this->load->view('footer');
 		/*
 		$where = array('id_user' =>$this->session->userdata('username'));
 		$data['tabel_ta'] = $this->M_AjukanJudul->tampil_data($where)->result();
@@ -49,72 +49,31 @@ class reviewjudul extends CI_Controller{
 		*/
 	}
 
-	
-	
-	//aksi tambah
-		function tambah_aksi(){
-		
-		$judul = $this->input->post('judul');
-		$ringkasan = $this->input->post('ringkasan');
-		$dospem = $this->input->post('dospem');
-		
-		$mydate=getdate(date("U"));
-		
-		
- 
-		$data = array(
-			'id_user' => $this->session->userdata('username'),
-			'judul_TA' => $judul,
-			'prodi' => $this->session->userdata('prodi'),
-			'golongan' => $this->session->userdata('golongan'),
-			'ringkasan' => $ringkasan,
-			'dospem' => $dospem,
-			'komentar' => "Belum ada komentar",
-			'status' => "Belum Di review",
-			'tanggal_kirim' => "$mydate[year]-$mydate[mon]-$mydate[mday]"
-			);
-		
-		
-		$this->M_AjukanJudul->input_data($data,'table_ta');
-		redirect('mahasiswa/usulanjudul/');
-	}
-	
-	function hapus($id){
-		$where = array('id' => $id);
-		$this->M_AjukanJudul->hapus_data($where,'table_ta');
-		redirect('mahasiswa/usulanjudul/');
-}
-
 	function edit($id){
+		$this->load->view('header');
 		$where = array('id' => $id);
 		$data['table_ta'] = $this->M_AjukanJudul->edit_data($where,'table_ta')->result();
-		$this->load->view('reviewer/Review-Edit',$data);
+		$this->load->view('reviewer/Reviewer-Edit',$data);
+		$this->load->view('footer');
 	}
 	
 	function update(){
 	$id = $this->input->post('id');
-	$judul_TA = $this->input->post('judul_TA');
-	$ringkasan = $this->input->post('ringkasan');
-	$dospem = $this->input->post('dospem');
 	$komentar = $this->input->post('komentar');
 	$status = $this->input->post('status');
-	$mydate=getdate(date("U"));
 
 	$data = array(
-			'judul_TA' => $judul_TA,
-			'ringkasan' => $ringkasan,
-			'dospem' => $dospem,
 			'komentar' => $komentar,
-			'status' => $status,
-			'tanggal_kirim' => "$mydate[year]-$mydate[mon]-$mydate[mday]"
+			'status' => $status
 			);
+		
 
 	$where = array(
 		'id' => $id
 	);
 
 	$this->M_AjukanJudul->update_data($where,$data,'table_ta');
-	redirect('mahasiswa/usulanjudul/');
+	redirect('reviewer/reviewjudul');
 }
 
 
