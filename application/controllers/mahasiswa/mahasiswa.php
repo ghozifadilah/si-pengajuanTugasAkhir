@@ -18,13 +18,17 @@ class mahasiswa extends MY_Controller{
 
   public function index()
   {
+	$this->load->view('header');
     $this->load->view('mahasiswa/Dashboard');
+	$this->load->view('footer');
   }
   
   public function pengajuan(){
+
 	  $this->load->view('mahasiswa/ajukanjudul');
   }
   public function KirimJudul (){
+	  $this->load->view('header');
 	  redirect('mahasiswa/usulanjudul/');
   }
   
