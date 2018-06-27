@@ -8,9 +8,10 @@
 		return $this->db->get('user');
 	}
 	
-	function akses_data(){
+	function OptionDosen(){
 		
-		return $this->db->get('user');
+		$query = $this->db->query("SELECT * FROM user WHERE level ='dospem'");
+		return $query->result();
 	}
 	
  

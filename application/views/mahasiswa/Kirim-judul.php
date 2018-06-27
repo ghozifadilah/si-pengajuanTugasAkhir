@@ -24,17 +24,22 @@
 				<td><input type="text" name="judul"></td>
 			</tr>
 			<tr>
-				<td>Ringkasan</td>
+				<td>ringkasan</td>
 				<td><textarea  name="ringkasan"  required  ></textarea></td>
 				 
 			</tr>
 			<tr>
-				<td>Dosen Pembimbing</td>
-				<td><input type="text" name="dospem"></td>
+				<td>Dosen Pembimbing<td>
+				<select name="dospem" id="" >
+				<?php  foreach( $dospem as $row ): ?> 
+				<option><?php echo $row->nama ?></option>
+				<?php endforeach; ?>
+				</select>
+				</td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Tambah" href="<?php echo site_url('views/reviewr/contenview.php'); ?> "></td>
+				<td><input type="submit" value="Tambah"></td>
 			</tr>
 		</table>
 	</form>	

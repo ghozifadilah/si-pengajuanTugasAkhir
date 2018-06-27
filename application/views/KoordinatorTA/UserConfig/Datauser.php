@@ -14,7 +14,7 @@
 	  <br>
 	
 	
-	
+	<Center>
 	<table style="margin:20px auto;" border="1">
 		<tr>
 			<th>No</th>
@@ -27,7 +27,7 @@
 			
 		</tr>
 		<?php 
-		$no = 1;
+		$no = $this->uri->segment('3') + 1;
 		foreach($user as $u){ 
 		?>
 		<tr>
@@ -45,6 +45,10 @@
 		</tr>
 		<?php } ?>
 	</table>
-  
+	 <br/>
+	<?php 
+	echo $this->pagination->create_links();
+	?>
+  <Center>
   </body>
 </html>

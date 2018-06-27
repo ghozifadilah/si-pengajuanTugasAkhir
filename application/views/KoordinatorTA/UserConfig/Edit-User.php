@@ -4,8 +4,8 @@
   </head>
   <body>
       <center>
-        <h1>Halaman Pengajuan Judul || SITA </h1><br />
-		<h3>Edit Data</h3><br /><br />
+
+		<h3>Edit Data Hak akses</h3><br /><br />
 		<a href="<?php echo site_url('mahasiswa/mahasiswa'); ?>">Home</a>
         <br>
 		<a href="<?php echo site_url('mahasiswa/mahasiswa/LihatJudul'); ?>">LihatJudul</a>
@@ -28,16 +28,26 @@
 				</td>
 			</tr>
 			<tr>
-				<td>prodi</td>
-				<td><input type="text" name="prodi" value="<?php echo $u->prodi ?>"></td>
+				<td>Prodi<td>
+				<select name="prodi" id="" >
+				<?php  foreach( $prodi as $row ): ?> 
+				<option><?php echo $row->Prodi ?></option>
+				<?php endforeach; ?>
+				</select>
+				</td>
 			</tr>
 			<tr>
-				<td>golongan</td>
-				<td><input type="text" name="golongan" value="<?php echo $u->golongan ?>"></td>
+				<td>golongan<td>
+				<select name="golongan" id="" >
+				<?php  foreach( $golongan as $row ): ?> 
+				<option><?php echo $row->golongan ?></option>
+				<?php endforeach; ?>
+				</select>
+				</td>
 			</tr>
 			<tr>
 				<td>level<td>
-				<select name="" id="" >
+				<select name="level" id="" >
 				<?php  foreach( $akses as $row ): ?> 
 				<option><?php echo $row->level ?></option>
 				<?php endforeach; ?>
@@ -46,10 +56,10 @@
 			</tr>
 			<tr>
 				<td>active<td>
-				<select name="" id="" >
-				<?php  foreach( $akses as $row ): ?> 
-				<option><?php echo $row->active ?></option>
-				<?php endforeach; ?>
+				<select name="active" id="" >
+				
+				<option>1</option>
+				<option>0</option>
 				</select>
 				</td>
 			</tr>

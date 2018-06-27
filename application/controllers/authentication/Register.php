@@ -8,6 +8,9 @@
          $this->load->library(array('form_validation'));
          $this->load->helper(array('url','form'));
          $this->load->model('M_account'); //call model
+		 $this->load->model('M_Config');
+		 $this->load->model('M_Grafik');
+        
      }
  
      public function index() {
@@ -21,7 +24,9 @@
         
 		 //jika validasi form salah
 		if($this->form_validation->run() == FALSE) {
+			$this->load->view('header');
              $this->load->view('authentication/v_register');
+			 $this->load->view('footer');
          }else{
 			//input ke database user
              $data['nama']    =   		  $this->input->post('name');
@@ -33,13 +38,23 @@
 			 $data['active']  =    	  	  "1";
  
              $this->M_account->daftar($data);
+			 
+	
+			 
              $pesan['message'] =    "Pendaftaran berhasil";
              $this->load->view('notification/DaftarSukses');
          }
      }
 	 //link tok 
 	  public function newuser () {
-    $this->load->view('authentication/v_register');
+	
+	//Option
+	$data['golongan'] = $this->M_Config->tampilgolongan();
+	$data['prodi'] = $this->M_Config->tampilProdi();
+	
+	$this->load->view('header');            
+    $this->load->view('authentication/v_register',$data);
+    $this->load->view('footer');
   }
  
 	 

@@ -12,7 +12,7 @@
 		$this->db->insert($table,$data);
 	}
 	
-	function hapus_data($where,$table){
+function hapus_data($where,$table){
 	$this->db->where($where);
 	$this->db->delete($table);
 }
@@ -26,4 +26,11 @@ function edit_data($where,$table){
 		$this->db->update($table,$data);
 	}	
 
+	function tampilnamaDosen(){
+		//cari dosen
+		$query = $this->db->query("SELECT * FROM user WHERE level IN ('dosen','kota','reviewer') ");
+		return $query->result();
+	}
+	
+	
   }

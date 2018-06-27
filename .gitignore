@@ -32,3 +32,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 application/controllers/KoordinatorTA/UserData.php
 jjj.php
 v_proposal.php
+application/config/config.php
+application/config/config.php

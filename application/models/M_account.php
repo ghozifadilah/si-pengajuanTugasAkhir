@@ -6,5 +6,7 @@
        function daftar($data)
        {
             $this->db->insert('user',$data);
+			
+	
        }
   }

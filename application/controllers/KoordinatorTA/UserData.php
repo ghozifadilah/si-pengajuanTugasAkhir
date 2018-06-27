@@ -18,15 +18,32 @@ class UserData extends CI_Controller{
 
 		
 		$this->load->model('M_Userdata');
-                $this->load->helper('url');
+		$this->load->model('M_Config');
+        
+		$this->load->helper('url');
 		
 		
 	}
  //lihat
 	function index(){
 		
-		$data['user'] = $this->M_Userdata->tampil_data()->result();
+		//pengaturan pagination tabel
+		$this->load->database();
+		$jumlah_data = $this->M_Config->Pagejumlah_dataUser('user');
+		$this->load->library('pagination');
+		$config['base_url'] = base_url().'koordinatorTA/UserData/index';
+		$config['total_rows'] = $jumlah_data;
+		$config['per_page'] = 10;
+		$from = $this->uri->segment(4);
+		$this->pagination->initialize($config);		
+		$data['user'] = $this->M_Config->PagedataUser('user',$config['per_page'],$from);
 		$this->load->view('koordinatorTA/UserConfig/Datauser',$data);
+		
+		
+		
+		/*$data['user'] = $this->M_Userdata->tampil_data()->result();
+		$this->load->view('koordinatorTA/UserConfig/Datauser',$data);
+		*/
 	}
 
 
@@ -35,24 +52,8 @@ class UserData extends CI_Controller{
 		$this->load->view('mahasiswa/Kirim-judul');
 	}
 
-	//aksi tambah
-		function tambah_aksi(){
-		
-		$judul = $this->input->post('judul');
-		$ringkasan = $this->input->post('ringkasan');
-		$dospem = $this->input->post('dospem');
- 
-		$data = array(
-			'id_user' => $this->session->userdata('username'),
-			'nama' => $nama,
-			'ringkasan' => $ringkasan,
-			'dospem' => $dospem,
-			'komentar' => "Belum ada komentar",
-			'status' => "Belum Di review"
-			);
-		$this->M_AjukanJudul->input_data($data,'table_ta');
-		redirect('mahasiswa/usulanjudul/');
-	}
+	
+	
 	
 	function hapus($id){
 		$where = array('id_user' => $id);
@@ -63,7 +64,12 @@ class UserData extends CI_Controller{
 	function edit($id){
 		$where = array('id_user' => $id);
 		$data['user'] = $this->M_Userdata->edit_data($where,'user')->result();
-		$data['akses'] = $this->M_Userdata->tampil_data()->result();
+		
+		//option nganu akses prodi kro golongan
+		$data['akses'] = $this->M_Config->aksesUser();
+		$data['golongan'] = $this->M_Config->tampilgolongan();
+		$data['prodi'] = $this->M_Config->tampilProdi();
+		
 		$this->load->view('KoordinatorTA/UserConfig/edit-User',$data);
 	}
 	

@@ -27,6 +27,8 @@ public function cekAkun(){
 			'username'=> $query->id_user,
 			'level'=> $query->level,
 			'nama'=> $query->nama,
+			'prodi'=> $query->prodi,
+			'golongan'=> $query->golongan,
 			'logged_in' => true
 		);
 		$this->session->set_userdata($userData);

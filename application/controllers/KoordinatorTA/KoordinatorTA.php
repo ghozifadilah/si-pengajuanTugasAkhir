@@ -20,15 +20,17 @@ class KoordinatorTA extends MY_Controller{
 }
 
   public function index(){
+	$this->load->view('header');
     $this->load->view('KoordinatorTA/Dashboard');
+	$this->load->view('footer');
+	
   }
   
-  public function ConfigDataUser (){
-    redirect('KoordinatorTA/UserData');
+  public function UbahJadwal (){
+	 //nganu  Jadwal
+	 redirect('mahasiswa/usulanjudul/');
   }
-  public function datauser (){
-   $this->load->view('koordinatorTA/UserConfig/Datauser');
-  }
+  
   
 }
 ?>

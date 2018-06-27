@@ -4,13 +4,17 @@
  <head>
    <meta charset="UTF-8">
    <title>
-     Pendaftaran Akun | Tutorial Simple Login Register CodeIgniter @ http://recodeku.blogspot.com
+     Pendaftaran Akun 
    </title>
+     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url('assets/css/scrolling-nav.css')?>" rel="stylesheet">
  </head>
  <body>
  <center>
-     <h2>Pendaftaran Akun</h2>
- 
+     <br>
+	 <br><br><br>
      <?php echo form_open('authentication/register');?>
      <p>Nama:</p>
      <p>
@@ -26,15 +30,25 @@
 	 
 	 <p>Prodi:</p>
      <p>
-     <input type="text" name="prodi" value="<?php echo set_value('prodi'); ?>"/> 
+	<select 	
+				name="prodi" id="" >
+				<?php  foreach( $prodi as $row ): ?> 
+				<option><?php echo $row->Prodi ?></option>
+				<?php endforeach; ?>
+	</select>
      </p>
      <p> <?php echo form_error('username'); ?> </p>
 	 
 	 <p>Golongan:</p>
      <p>
-     <input type="text" name="golongan" value="<?php echo set_value('golongan'); ?>"/> 
+	<select 	
+				name="golongan" id="" >
+				<?php  foreach( $golongan as $row ): ?> 
+				<option><?php echo $row->golongan ?></option>
+				<?php endforeach; ?>
+	</select>
      </p>
-     <p> <?php echo form_error('username'); ?> </p>
+	 <p> <?php echo form_error('username'); ?> </p>
  
      <p>Password:</p>
      <p>
@@ -56,5 +70,7 @@
  
      
 </center>
+   <br>
+	 <br><br><br>
  </body>
  </html>
