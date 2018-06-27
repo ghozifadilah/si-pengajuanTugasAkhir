@@ -19,6 +19,7 @@ class DaftarBimbingan extends CI_Controller{
 		//ngeload model ben iso di panggil
 
 		$this->load->model('M_Daftarbimbingan');
+		$this->load->model('M_AjukanJudul');
 		$this->load->model('M_Config');
         $this->load->helper('url');
 
@@ -109,17 +110,16 @@ class DaftarBimbingan extends CI_Controller{
 function edit($id){
 		$where = array('id' => $id);
 		$data['table_ta'] = $this->M_AjukanJudul->edit_data($where,'table_ta')->result();
-		$this->load->view('reviewer/Reviewer-Edit',$data);
+		$data['dospem'] = $this->M_Config->tampilnamaDosen();
+		$this->load->view('KoordinatorTA/BimbinganEdit',$data);
 	}
 	
 function update(){
 	$id = $this->input->post('id');
-	$komentar = $this->input->post('komentar');
-	$status = $this->input->post('status');
+	$Dospem = $this->input->post('dospem');
 
 	$data = array(
-			'komentar' => $komentar,
-			'status' => $status
+			'Dospem' => $Dospem ,
 			);
 		
 
@@ -128,7 +128,7 @@ function update(){
 	);
 
 	$this->M_AjukanJudul->update_data($where,$data,'table_ta');
-	redirect('reviewer/reviewjudul');
+	redirect('KoordinatorTA/KoordinatorTA');
 }
 
 
