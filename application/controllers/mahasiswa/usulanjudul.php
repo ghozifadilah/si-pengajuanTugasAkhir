@@ -27,6 +27,7 @@ class usulanjudul extends CI_Controller{
 	}
  
 	function index(){
+		$this->load->view('header');
 		$where = array('id_user' =>$this->session->userdata('username'));
 		$data['tabel_ta'] = $this->M_AjukanJudul->tampil_data($where)->result();
 		$this->load->view('mahasiswa/ajukanjudul',$data);

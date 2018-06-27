@@ -11,9 +11,7 @@ class reviewer extends MY_Controller{
     if ($this->session->userdata('level') == "mahasiswa") {
       redirect('mahasiswa/mahasiswa');
  }
-	if ($this->session->userdata('level') == "kota") {
-      redirect('KoordinatorTA/KoordinatorTA');
- }
+ 
 	if($this->session->userdata('level') == "dosen"){
 		redirect('dosen/dosen');
 	}
@@ -23,5 +21,11 @@ class reviewer extends MY_Controller{
   {
     $this->load->view('reviewer/Dashboard');
   }
+  
+  public function review(){
+	  redirect('reviewer/reviewjudul');
+  }
+
 }
+
 ?>
