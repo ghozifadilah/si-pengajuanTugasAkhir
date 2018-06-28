@@ -1,22 +1,23 @@
 <html>
   <head>
     <title>Ajukan Judul|| SITA </title>
+   
   </head>
   <body>
       <center>
         <h1>Halaman Pengajuan Judul || SITA </h1><br />
 		<h3>Edit Data</h3><br /><br />
-		<a href="<?php echo site_url('mahasiswa/mahasiswa'); ?>">Home</a>
+
+		<a href="<?php echo site_url('dosen/dosen'); ?>">Home</a>
         <br>
-		<a href="<?php echo site_url('mahasiswa/mahasiswa/LihatJudul'); ?>">LihatJudul</a>
-        <br>
-		<a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
+		<a href="<?php echo site_url('dosen/penelitian'); ?>">LihatJudul</a>
       </center>
 	  <br>
 	  <br>
 	
 			
 	</center>
+
 	<?php foreach($penelitian as $u){ ?>
 	<form action="<?php echo base_url(). 'dosen/penelitian/update'; ?>" method="post">
 		<table style="margin:20px auto;">
@@ -38,8 +39,6 @@
 		</table>
 	</form>	
 	<?php } ?>
-
-  	
-  
+	  	</div>
   </body>
 </html>
