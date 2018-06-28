@@ -16,7 +16,7 @@
 		<a href="<?php echo site_url('koordinatorTA/UserData'); ?>">Data User</a><br>
 		<a href="<?php echo site_url('koordinatorTA/ControlTanggal'); ?>">Atur Jadwal </a><br>
 	   <a href="<?php echo site_url('reviewer/reviewer/review'); ?>">Review judul</a><br>
-	   <a href="<?php echo site_url('reviewer/reviewer/review'); ?>">Statistik</a><br>
+	   <a href="<?php echo site_url('Statistik/GrafikDosen'); ?>">Statistik</a><br>
 	   <br><br>
 	  	   <a href="<?php echo site_url('public/pblc/laporan'); ?>"> Cetak Laporan</a><br>
 	   <a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
