@@ -29,9 +29,3 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.sublime-project
 /tests/tests/
 /tests/results/
-application/controllers/KoordinatorTA/UserData.php
-jjj.php
-v_proposal.php
-application/config/config.php
-application/config/config.php
-v_proposal.php

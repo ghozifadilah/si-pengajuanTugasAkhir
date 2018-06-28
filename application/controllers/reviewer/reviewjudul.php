@@ -17,7 +17,7 @@ class reviewjudul extends CI_Controller{
 	
 
 
-		//ngeload model ben iso di panggil
+		//ngeload model agar bisa di panggil
 		$this->load->model('M_AjukanJudul');
 		$this->load->model('M_Config');
         $this->load->helper('url');
@@ -29,7 +29,7 @@ class reviewjudul extends CI_Controller{
 		
 		
 		
-		
+		$this->load->view('header');
 		//pengaturan pagination tabel dan view nya
 		$this->load->database();
 		$jumlah_data = $this->M_Config->Pagejumlah_KirimJudul('table_ta');
@@ -41,7 +41,7 @@ class reviewjudul extends CI_Controller{
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_Config->PageReview_judul('table_ta',$config['per_page'],$from);
 		$this->load->view('reviewer/Review-Judul',$data);
-		
+		$this->load->view('footer');
 		/*
 		$where = array('id_user' =>$this->session->userdata('username'));
 		$data['tabel_ta'] = $this->M_AjukanJudul->tampil_data($where)->result();
@@ -50,9 +50,11 @@ class reviewjudul extends CI_Controller{
 	}
 
 	function edit($id){
+		$this->load->view('header');
 		$where = array('id' => $id);
 		$data['table_ta'] = $this->M_AjukanJudul->edit_data($where,'table_ta')->result();
 		$this->load->view('reviewer/Reviewer-Edit',$data);
+		$this->load->view('footer');
 	}
 	
 	function update(){

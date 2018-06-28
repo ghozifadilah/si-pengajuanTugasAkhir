@@ -37,7 +37,6 @@ class UserData extends CI_Controller{
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
 		$data['user'] = $this->M_Config->PagedataUser('user',$config['per_page'],$from);
-		$this->load->view('header');
 		$this->load->view('koordinatorTA/UserConfig/Datauser',$data);
 		
 		
@@ -50,7 +49,6 @@ class UserData extends CI_Controller{
 
 	//Tambah
 	function kirimbaru(){
-		$this->load->view('header');
 		$this->load->view('mahasiswa/Kirim-judul');
 	}
 
@@ -66,7 +64,7 @@ class UserData extends CI_Controller{
 	function edit($id){
 		$where = array('id_user' => $id);
 		$data['user'] = $this->M_Userdata->edit_data($where,'user')->result();
-		$this->load->view('header');
+		
 		//option nganu akses prodi kro golongan
 		$data['akses'] = $this->M_Config->aksesUser();
 		$data['golongan'] = $this->M_Config->tampilgolongan();

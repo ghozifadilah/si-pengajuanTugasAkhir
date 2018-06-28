@@ -21,21 +21,26 @@ class dosen extends MY_Controller{
 
   public function index()
   {
-	$this->load->view('header');
+    $this->load->view('header');
     $this->load->view('dosen/Dashboard');
-	$this->load->view('footer');
+    $this->load->view('footer');
   }
   // input judul penelitian, melihat mahasiswa sebagai pembinging,memilih mahasisa yang akan di bimbing
   public function julpen(){
-	  
+	  $this->load->view('header');
     $this->load->view('dosen/Penelitian');
+    $this->load->view('footer');
   }
 
   public function mahsaya() {
+    $this->load->view('header');
     $this->load->view('dosen/MahasiswaSaya');
+    $this->load->view('footer');
   }
   public function pilmah(){
+    $this->load->view('header');
     $this->load->view('dosen/PilihMahasiswa');
+    $this->load->view('footer');
   }
   
   

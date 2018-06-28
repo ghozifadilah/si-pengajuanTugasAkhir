@@ -18,14 +18,6 @@
 	   <a href="<?php echo site_url('reviewer/reviewer/review'); ?>">Review judul</a><br>
 	   <a href="<?php echo site_url('reviewer/reviewer/review'); ?>">Statistik</a><br>
 	   <br><br>
-	   <a href="#">Menentukan Pembimbing </a><br>
-	   <?php echo anchor('koordinatorTA/DaftarBimbingan/Golongan/'.$golongan='A','Golongan A'); ?>
-	    <?php echo anchor('koordinatorTA/DaftarBimbingan/Golongan/'.$golongan='B','Golongan B'); ?>
-		<?php echo anchor('koordinatorTA/DaftarBimbingan/Golongan/'.$golongan='C','Golongan C'); ?>
-		<?php echo anchor('koordinatorTA/DaftarBimbingan/Golongan/'.$golongan='D','Golongan D'); ?>
-	   
-	   <br><br>
-	   
 	  	   <a href="<?php echo site_url('public/pblc/laporan'); ?>"> Cetak Laporan</a><br>
 	   <a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
 		
@@ -36,7 +28,7 @@
 	   <h4><?php echo $this->session->userdata('nama'); ?> </h4>
 	   <h4>NIK   : <?php echo $this->session->userdata('username'); ?> </h4>
 	   <h4>Prodi    : <?php echo $this->session->userdata('prodi'); ?> </h4>
-	   <h4>Golongan  : <?php echo $this->session->userdata('golongan') ?> </h4>
+	   <h4>Golongan  : <?php echo $this->session->userdata('golongan'); ?> </h4>
 	  
 	  
 	  </center><br><br>

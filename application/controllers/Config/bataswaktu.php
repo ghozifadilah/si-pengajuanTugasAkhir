@@ -31,7 +31,9 @@ class bataswaktu extends CI_Controller{
 	
 	} else {
 	//echo "sudah terlewat";
+		$this->load->view('header');
 	$this->load->view('notification/Block101');
+	$this->load->view('footer');
 	}
 
  }
@@ -55,7 +57,9 @@ function KirimProposal(){
 		
 	} else {
 	//jika batas waktu di lewati
+		$this->load->view('header');
 	$this->load->view('notification/Block101');
+	$this->load->view('footer');
 	}
 	
 	
@@ -82,7 +86,9 @@ function KirimProposal(){
 		
 	} else {
 	//jika batas waktu di lewati
+		$this->load->view('header');
 	$this->load->view('notification/Block101');
+	$this->load->view('footer');
 	}
 	
 	

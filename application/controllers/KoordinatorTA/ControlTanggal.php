@@ -33,7 +33,7 @@ class ControlTanggal extends CI_Controller{
 		$data['Tanggal'] = $this->M_Config->TampilTanggal();
 		$this->load->view('header');
 		$this->load->view('koordinatorTA/ConfigJadwal/AturJadwal',$data);
-		
+		$this->load->view('footer');
 	}
 
 	//ngedit batas waktu and shit

@@ -1,24 +1,27 @@
 <html>
   <head>
     <title>Ajukan Judul|| SITA </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
+     <script src="<?php echo base_url('vendor/jquery/jquery.min.js')?>"></script>
+        <script src="<?php echo base_url('vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/main.css">
+
   </head>
   <body>
+
       <center>
         <h1>Halaman Pengajuan Judul || SITA </h1><br />
 		<h3> Username Anda Adalah <?php echo $this->session->userdata('username'); ?></h3><br /><br />
-		<a href="<?php echo site_url('mahasiswa/mahasiswa'); ?>">Home</a>
-        <br>
-		<a href="<?php echo site_url('mahasiswa/usulanjudul/LihatJudul'); ?>">Kirim Judul</a>
-        <br>
-		<a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
+		<a href="<?php echo site_url('reviewer/reviewer'); ?>">Home</a>
       </center>
 	  <br>
 	  <br>
-	
-	
-	<center><?php echo anchor('mahasiswa/usulanjudul/kirimbaru','Kirim Judul'); ?></center>
-	<table style="margin:20px auto;" border="1">
-		<tr>
+
+	<div class="container">
+	<table class="table" style="margin:20px auto;" border="1">
+		 <tr class="success">
 			<th>No</th>
 			<th>Action</th>
 			<th>Judul</th>

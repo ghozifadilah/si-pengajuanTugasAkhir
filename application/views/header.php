@@ -22,6 +22,8 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-      <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">JURUSAN TEKONOLOGI INFORMASI POLTIKENIK NEGERI JEMBER</a></div>
-    </nav>
+      <div class="container text-center">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top" 1>JURUSAN TEKONOLOGI INFORMASI POLTIKENIK NEGERI JEMBER</a>
+    
+      <a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
+     </nav>
