@@ -22,6 +22,7 @@
 			<th>No</th>
 			<th>Action</th>
 			<th>Judul</th>
+			<th>Individu atau kelompok</th>
 			<th>Dosen Pembimbing</th>
 			<th>Komentar</th>
 			<th>Status</th>
@@ -39,6 +40,7 @@
                   <?php echo anchor('mahasiswa/usulanjudul/hapus/'.$u->id,'Hapus'); ?>
 			</td>
 			<td><?php echo $u->judul_TA ?></td>
+			<td><?php echo $u->ik ?></td>
 			<td><?php echo $u->Dospem ?></td>
 			<td><?php echo $u->komentar ?></td>
 			<td><?php echo $u->status ?></td>

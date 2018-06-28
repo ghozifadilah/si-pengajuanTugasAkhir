@@ -15,16 +15,11 @@ class reviewer extends MY_Controller{
 	if($this->session->userdata('level') == "dosen"){
 		redirect('dosen/dosen');
 	}
-  if($this->session->userdata('level') == "kota"){
-    redirect('KoordinatorTA/KoordinatorTA');
-  }
 }
 
   public function index()
   {
-    $this->load->view('header');
     $this->load->view('reviewer/Dashboard');
-    $this->load->view('footer');
   }
   
   public function review(){

@@ -11,8 +11,8 @@ class bimbingan extends CI_Controller{
 		//memanggil function dari controller MY_Controller
  
   //validasi jika session dengan level tidak sesuai
-    if ($this->session->userdata('level') == "dosen") {
-      redirect('dosen/dosen');
+    if ($this->session->userdata('level') == "mahasiswa") {
+      redirect('mahasiswa/mahasiswa');
  }
 	
 
@@ -43,7 +43,6 @@ class bimbingan extends CI_Controller{
 		$data['table_ta'] = $this->M_Daftarbimbingan->Pagedata_bimbingan('table_ta',$Dospem,$config['per_page'],$from);
 		$this->load->view('header');
 		$this->load->view('dosen/DaftarBimbingan',$data);
-		$this->load->view('footer');
 		
 		/*
 		$where = array('id_user' =>$this->session->userdata('username'));
@@ -58,7 +57,7 @@ class bimbingan extends CI_Controller{
 		//manggil dosen
 		$this->load->view('header');
 		$this->load->view('dosen/Judul-Baru');
-		$this->load->view('footer');
+		
 	}
 
 	

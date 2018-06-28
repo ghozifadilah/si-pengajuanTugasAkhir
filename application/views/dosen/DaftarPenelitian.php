@@ -6,18 +6,19 @@
       <center>
         <h1>Halaman Pengajuan Judul || SITA </h1><br />
 		<h3> Username Anda Adalah <?php echo $this->session->userdata('username'); ?></h3><br /><br />
-		
-		<a href="<?php echo site_url('dosen/dosen'); ?>">Home</a>
-		
+		<a href="<?php echo site_url('mahasiswa/mahasiswa'); ?>">Home</a>
+        <br>
+		<a href="<?php echo site_url('mahasiswa/usulanjudul/LihatJudul'); ?>">Kirim Judul</a>
+        <br>
+		<a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
       </center>
 	  <br>
 	  <br>
-
 	
-	<div class="container">
-		<center><?php echo anchor('dosen/penelitian/kirimbaru','Kirim Judul'); ?></center>
-			<table class="table" style="margin:20px auto;" border="1">
-		<tr class="success">
+	
+	<center><?php echo anchor('dosen/penelitian/kirimbaru','Kirim Judul'); ?></center>
+	<table style="margin:20px auto;" border="1">
+		<tr>
 			<th>No</th>
 			<th>Action</th>
 			<th>Judul Penelitian</th>

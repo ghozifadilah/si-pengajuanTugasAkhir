@@ -7,8 +7,31 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
          <div class="box-form">
-<h3>Form Pendaftaran Ujian Proposal</h3>
 
+
+
+		 <?php foreach($dataproposal as $u){?>
+			
+				
+		
+			<?php 
+				$sudahinput =  $u->sudah;
+				if($sudahinput == 1 ){
+				echo "<h5 Style='color:green;'> Anda telah mengupload </h5>:";
+				}else{
+			     echo "<h5 Style='color:red;'> Anda Belum mengupload </h5>";
+				}
+			
+			?>
+				<h5>Judul Proposal : <?php echo $u->Judul ?> | <a  href='<?php echo $u->file ?>'> Lihat file anda </a>|<a><?php echo anchor('mahasiswa/homeproposal/hapus/'.$u->NIM,' Hapus'); ?> </a> </h5>
+				
+			
+		 <?php } ?>
+		 
+		 <br><hr>
+<h3>Form Pendaftaran Ujian Proposal</h3>
+		
+		
 	
  
   <?php echo form_open_multipart('mahasiswa/homeproposal/aksi_upload');?>

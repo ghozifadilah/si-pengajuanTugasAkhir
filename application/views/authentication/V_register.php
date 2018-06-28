@@ -1,4 +1,6 @@
-?><!DOCTYPE html>  
+ <?php
+ defined('BASEPATH') OR exit('No direct script access allowed');
+ ?><!DOCTYPE html>  
  <head>
    <meta charset="UTF-8">
    <title>

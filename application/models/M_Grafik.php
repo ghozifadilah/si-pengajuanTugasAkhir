@@ -32,21 +32,18 @@ class M_Grafik extends CI_Model{
     } 
 	
 	
+	// grafik usulan judul 
 	public function count_datamahasiswa(){
 		// menghitung data row 
 		return $this->db->where(['level'=>'mahasiswa'])->from("user")->count_all_results();
 	}
 	
-	public function DataMahasiswa($row_data){
+	public function DataMahasiswa(){
 		
 	$this->db->query("INSERT INTO statistik_mahasiswa (Nama,Nilai) VALUES ('SudahMengajukan', 1) ON DUPLICATE KEY UPDATE Nilai=Nilai+1;
 		");		
-
-	 $this->db->query("INSERT INTO statistik_mahasiswa (Nama,Nilai) VALUES ('BelumMengajukan',$row_data) ON DUPLICATE KEY UPDATE Nilai=Nilai-1;
-		
-		");
 	}
-	public function DataMahasiswaTambah(){
+	/*public function DataMahasiswaTambah(){
 		
 	 $this->db->query("INSERT INTO statistik_mahasiswa (Nama) VALUES ('BelumMengajukan') ON DUPLICATE KEY UPDATE Nilai=Nilai+1;
 		
@@ -58,11 +55,11 @@ class M_Grafik extends CI_Model{
 		");
 		
 	
-	}
+	}*/
 	
 	public function get_all_DataMahasiswa() 
     { 
-        return $this->db->get('statistik_pengajuan')->result(); 
+        return $this->db->get('statistik_mahasiswa')->result(); 
     } 
 	
   }

@@ -11,7 +11,7 @@
 		<br>
 		<a href="<?php echo site_url('config/bataswaktu/KirimJudulfinal/'); ?>">Ajukan Judul Tugas akhir (Final )</a>
 		<br>
-		<a href="<?php echo site_url('mahasiswa/mahasiswa/senpro'); ?>">Ujian Proposal</a>
+		<a href="<?php echo site_url('mahasiswa/homeproposal'); ?>">Daftar Ujian Proposal</a>
 		<br>
 		<a href="<?php echo site_url('authentication/auth/logout'); ?>">Keluar</a>
       </center>

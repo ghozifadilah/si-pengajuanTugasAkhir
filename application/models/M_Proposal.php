@@ -5,11 +5,12 @@
 
    	function tampil_data($where){
 		$this->db->where($where);
-		return $this->db->get('table_ta');
+		return $this->db->get('kirimproposal');
 	}
  
 function input_data($data,$table){
 		$this->db->insert($table,$data);
+		//$this->db->on_duplicate($table, $data);
 	}
 	
 function hapus_data($where,$table){

@@ -23,10 +23,21 @@
 				<td>Judul</td>
 				<td><input type="text" name="judul"></td>
 			</tr>
+			
+			
+			
 			<tr>
 				<td>ringkasan</td>
 				<td><textarea  name="ringkasan"  required  ></textarea></td>
 				 
+			</tr>
+			<tr>
+			<td>Individu / kelompok </td>
+				<td><select name="ik" id="" >
+				<option>Individu</option>
+				<option>Kelompok</option>
+				</select></tr>
+			</td>
 			</tr>
 			<tr>
 				<td>Dosen Pembimbing<td>
