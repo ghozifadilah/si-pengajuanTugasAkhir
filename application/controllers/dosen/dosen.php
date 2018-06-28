@@ -21,7 +21,9 @@ class dosen extends MY_Controller{
 
   public function index()
   {
+	$this->load->view('header');
     $this->load->view('dosen/Dashboard');
+	$this->load->view('footer');
   }
   // input judul penelitian, melihat mahasiswa sebagai pembinging,memilih mahasisa yang akan di bimbing
   public function julpen(){

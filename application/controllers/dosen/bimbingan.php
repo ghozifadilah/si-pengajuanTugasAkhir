@@ -41,6 +41,7 @@ class bimbingan extends CI_Controller{
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_Daftarbimbingan->Pagedata_bimbingan('table_ta',$Dospem,$config['per_page'],$from);
+		$this->load->view('header');
 		$this->load->view('dosen/DaftarBimbingan',$data);
 		
 		/*
@@ -54,7 +55,7 @@ class bimbingan extends CI_Controller{
 	//Tambah
 	function kirimbaru(){
 		//manggil dosen
-		
+		$this->load->view('header');
 		$this->load->view('dosen/Judul-Baru');
 		
 	}

@@ -28,6 +28,7 @@ class DaftarDosen extends CI_Controller{
 	function index(){
 				
 		$data['user'] = $this->M_Config->tampilnamaDosen();
+		$this->load->view('header');
 		$this->load->view('koordinatorTA/UserConfig/DaftarDosen',$data);
 		
 	}
@@ -55,7 +56,7 @@ class DaftarDosen extends CI_Controller{
 		$data['akses'] = $this->M_Config->aksesUser();
 		$data['golongan'] = $this->M_Config->tampilgolongan();
 		$data['prodi'] = $this->M_Config->tampilProdi();
-		
+		$this->load->view('header');
 		$this->load->view('KoordinatorTA/UserConfig/edit-User',$data);
 	}
 	
@@ -69,7 +70,7 @@ class DaftarDosen extends CI_Controller{
 		$data['akses'] = $this->M_Config->aksesUser();
 		$data['golongan'] = $this->M_Config->tampilgolongan();
 		$data['prodi'] = $this->M_Config->tampilProdi();
-		
+		$this->load->view('header');
 		$this->load->view('KoordinatorTA/UserConfig/Edit-Limit',$data);
 	}
 	

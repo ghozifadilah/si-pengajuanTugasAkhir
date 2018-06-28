@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class homeproposal extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 
 function __construct(){
 		parent::__construct();
@@ -26,8 +11,13 @@ function __construct(){
 	}
 
 	public function index(){
+		$where = array('NIM' =>$this->session->userdata('username'));
+		$data['dataproposal'] = $this->M_Proposal->tampil_data($where)->result();
+		
+	
+		
 		$this->load->view('header');
-		$this->load->view('mahasiswa/v_proposal');
+		$this->load->view('mahasiswa/v_proposal',$data);
 		$this->load->view('footer');
 	}
 
@@ -62,7 +52,16 @@ function __construct(){
 			
 			$this->M_Proposal->input_data($data,'kirimproposal');
 			
-			$this->load->view('mahasiswa/v_proposalsukses',$dataFile);
+			$this->load->view('mahasiswa/homeproposal',$dataFile);
 		}
 	}
-}
+
+	function hapus($id){
+		$where = array('NIM' => $id);
+	
+		$this->M_Proposal->hapus_data($where,'kirimproposal');
+		redirect('mahasiswa/usulanjudul/');
+		
+		
+		}
+	}

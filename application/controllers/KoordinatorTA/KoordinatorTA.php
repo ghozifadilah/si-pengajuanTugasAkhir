@@ -28,6 +28,7 @@ class KoordinatorTA extends MY_Controller{
   
   public function UbahJadwal (){
 	 //nganu  Jadwal
+	 $this->load->view('header');
 	 redirect('mahasiswa/usulanjudul/');
   }
   

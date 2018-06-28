@@ -41,6 +41,7 @@ class DaftarBimbingan extends CI_Controller{
 		$from = $this->uri->segment(5);
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_Daftarbimbingan->Pagedata_bimbingan('table_ta',$Dospem,$config['per_page'],$from);
+		$this->load->view('header');
 		$this->load->view('KoordinatorTA/DaftarBimbingan',$data);
 		
 		/*
@@ -65,6 +66,7 @@ class DaftarBimbingan extends CI_Controller{
 		$from = $this->uri->segment(5);
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_Daftarbimbingan->Pagedata_bimbingan('table_ta',$Dospem,$config['per_page'],$from);
+		$this->load->view('header');
 		$this->load->view('KoordinatorTA/DaftarBimbingan',$data);
 		
 		/*
@@ -111,6 +113,7 @@ function edit($id){
 		$where = array('id' => $id);
 		$data['table_ta'] = $this->M_AjukanJudul->edit_data($where,'table_ta')->result();
 		$data['dospem'] = $this->M_Config->tampilnamaDosen();
+		$this->load->view('header');
 		$this->load->view('KoordinatorTA/BimbinganEdit',$data);
 	}
 	

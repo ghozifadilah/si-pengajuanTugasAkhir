@@ -43,6 +43,7 @@ class penelitian extends CI_Controller{
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_JudulPenelitian->Pagedata_Penelitian('table_penelitiandosen',$id_user,$config['per_page'],$from);
+		$this->load->view('header');
 		$this->load->view('dosen/DaftarPenelitian',$data);
 		
 		/*
@@ -62,13 +63,14 @@ class penelitian extends CI_Controller{
 		$from = $this->uri->segment(4);
 		$this->pagination->initialize($config);		
 		$data['table_ta'] = $this->M_JudulPenelitian->DaftarPagedata_Penelitian('table_penelitiandosen',$config['per_page'],$from);
+		$this->load->view('header');
 		$this->load->view('dosen/DaftarPenelitian',$data);
 	}
 	
 	//Tambah
 	function kirimbaru(){
 		//manggil dosen
-		
+		$this->load->view('header');
 		$this->load->view('dosen/Judul-Baru');
 		
 	}
@@ -87,7 +89,7 @@ class penelitian extends CI_Controller{
 			'kuota' => $kuota,
 			);
 		
-		
+		$this->load->view('header');
 		$this->M_JudulPenelitian->input_data($data,'table_penelitiandosen');
 		redirect('dosen/penelitian/');
 	}
@@ -101,6 +103,7 @@ class penelitian extends CI_Controller{
 	function edit($id){
 		$where = array('id' => $id);
 		$data['penelitian'] = $this->M_JudulPenelitian->edit_data($where,'table_penelitiandosen')->result();
+		$this->load->view('header');
 		$this->load->view('dosen/Edit-Judul',$data);
 	}
 	

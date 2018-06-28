@@ -31,7 +31,7 @@ class ControlTanggal extends CI_Controller{
 	function index(){
 		//buat edit tanggal
 		$data['Tanggal'] = $this->M_Config->TampilTanggal();
-
+		$this->load->view('header');
 		$this->load->view('koordinatorTA/ConfigJadwal/AturJadwal',$data);
 		
 	}
